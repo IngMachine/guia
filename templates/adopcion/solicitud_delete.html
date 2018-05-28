@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+{% block title %}
+    Borrar Registro
+{% endblock %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <h3>¿Desea eliminar la solicitud de esta persona {{ object.persona.nombre }} {{ object.persona.apellido }}</h3>
+        <button type="submit" class="btn btn-danger">Sí, eiminar</button>
+        <a class="btn btn-primary" href="{% url 'solicitud_listar' %}">Cancelar</a>
+    </form>
+{% endblock %}
